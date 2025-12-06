@@ -2,7 +2,6 @@ package com.fsk.rabbitmqtutorial.exchange.headers;
 
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
@@ -15,8 +14,10 @@ import java.util.Map;
  * - gizlilik: yüksek
  * 
  * whereAll() kullanıldığı için TÜM header'lar eşleşmeli.
+ * 
+ * NOT: @Component annotation'ı kaldırıldı - Artık otomatik çalışmıyor.
+ * Mesajlar sadece ConsumerController üzerinden manuel olarak okunuyor.
  */
-@Component
 public class HeadersExchangeConsumer {
 
     /**

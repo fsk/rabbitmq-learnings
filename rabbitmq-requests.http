@@ -1,0 +1,52 @@
+### RabbitMQ-1 API Requests
+# Server: localhost:8083
+# RabbitMQ: localhost:5673
+
+### Send message to Direct Exchange
+POST http://localhost:8083/api/send/direct?message=Direct Exchange Message
+
+###
+
+### Send message to Fanout Exchange
+POST http://localhost:8083/api/send/fanout?message=Fanout Exchange Message
+
+###
+
+### Send message to Topic Exchange
+POST http://localhost:8083/api/send/topic?message=Topic Exchange Message
+
+###
+
+### Send message to Headers Exchange
+POST http://localhost:8083/api/send/headers?message=Headers Exchange Message
+
+###
+
+### ============================================
+### CONSUMER ENDPOINTS - Manual Message Reading
+### ============================================
+
+### Consume message from Direct Exchange queue
+GET http://localhost:8083/api/consume/direct
+
+###
+
+### Consume message from Fanout Exchange - Queue 1
+GET http://localhost:8083/api/consume/fanout/1
+
+###
+
+### Consume message from Fanout Exchange - Queue 2
+GET http://localhost:8083/api/consume/fanout/2
+
+###
+
+### Consume message from Topic Exchange queue
+GET http://localhost:8083/api/consume/topic
+
+###
+
+### Consume message from Headers Exchange queue
+GET http://localhost:8083/api/consume/headers
+
+###

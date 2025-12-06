@@ -18,8 +18,6 @@
         </dependency>
     </dependencies>
 
-    <!-- Tüm bağımlılıklar parent pom.xml'den otomatik olarak gelir -->
-
     <build>
         <plugins>
             <plugin>

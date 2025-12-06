@@ -22,6 +22,37 @@ rabbitmq-tutorial/
     └── src/
 ```
 
+## RabbitMQ Kurulumu
+
+### Docker ile
+
+Proje ile aynı Docker network'ünde çalışacak şekilde:
+
+```bash
+# RabbitMQ'yu başlat (port mapping yok - sadece container içinde çalışır)
+docker-compose up -d
+
+# RabbitMQ'yu durdur
+docker-compose down
+
+# Logları görüntüle
+docker-compose logs -f rabbitmq
+
+# Container durumunu kontrol et
+docker-compose ps
+```
+
+## Uygulama Yapılandırması
+
+RabbitMQ container ile aynı network'te çalışması için `application.properties` dosyasına:
+
+```properties
+spring.rabbitmq.host=rabbitmq
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=admin
+spring.rabbitmq.password=admin123
+```
+
 ## Exchange Türleri
 
 ### 1. Direct Exchange
@@ -85,17 +116,8 @@ Tüm bağımlılıklar parent `pom.xml`'de tanımlıdır:
 
 - Java 21
 - Maven 3.6+
-- RabbitMQ Server (çalışıyor olmalı)
-
-## RabbitMQ Kurulumu
-
-### Docker ile:
-
-```bash
-docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
-```
-
-Management UI: http://localhost:15672 (guest/guest)
+- Docker & Docker Compose
+- RabbitMQ Server (Docker ile çalıştırılabilir)
 
 ## Örnek Kullanım
 
@@ -107,6 +129,10 @@ Her exchange türü için ayrı paketlerde örnek Producer ve Consumer sınıfla
 - `HeadersExchangeProducer` / `HeadersExchangeConsumer`
 
 Her pakette detaylı açıklamalar ve örnekler bulunmaktadır.
+
+## Docker Network
+
+Uygulama ve RabbitMQ aynı Docker network'ünde çalışır. Port mapping yapılmadığı için sadece container'lar arası iletişim mümkündür.
 
 ## Lisans
 

@@ -23,8 +23,7 @@
     <properties>
         <java.version>21</java.version>
     </properties>
-    
-    <!-- Ortak bağımlılıklar - tüm modüllere otomatik olarak eklenir -->
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

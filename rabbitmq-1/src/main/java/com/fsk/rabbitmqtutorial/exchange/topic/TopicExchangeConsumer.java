@@ -1,7 +1,6 @@
 package com.fsk.rabbitmqtutorial.exchange.topic;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.stereotype.Component;
 
 /**
  * Topic Exchange için mesaj dinleyen örnek Consumer sınıfı
@@ -13,8 +12,10 @@ import org.springframework.stereotype.Component;
  * - spor.tenis ✓
  * - spor.futbol.maç ✓
  * - teknoloji.haber ✗ (eşleşmez)
+ * 
+ * NOT: @Component annotation'ı kaldırıldı - Artık otomatik çalışmıyor.
+ * Mesajlar sadece ConsumerController üzerinden manuel olarak okunuyor.
  */
-@Component
 public class TopicExchangeConsumer {
 
     /**

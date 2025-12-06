@@ -1,0 +1,15 @@
+FROM rabbitmq:3-management-alpine
+
+# RabbitMQ management plugin'ini aktif et
+RUN rabbitmq-plugins enable rabbitmq_management
+
+# Varsayılan kullanıcı ve şifre (isteğe bağlı olarak değiştirilebilir)
+ENV RABBITMQ_DEFAULT_USER=admin
+ENV RABBITMQ_DEFAULT_PASS=admin123
+
+# Portları expose et (ancak host'a map edilmeyecek)
+EXPOSE 5672 15672
+
+# RabbitMQ'yu başlat
+CMD ["rabbitmq-server"]
+

@@ -1,15 +1,16 @@
 package com.fsk.rabbitmqtutorial.exchange.fanout;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.stereotype.Component;
 
 /**
  * Fanout Exchange için mesaj dinleyen örnek Consumer sınıfları
  * 
  * Fanout Exchange'de aynı mesaj tüm kuyruklara gider.
  * Bu örnekte 2 farklı consumer, 2 farklı kuyruktan mesaj dinliyor.
+ * 
+ * NOT: @Component annotation'ı kaldırıldı - Artık otomatik çalışmıyor.
+ * Mesajlar sadece ConsumerController üzerinden manuel olarak okunuyor.
  */
-@Component
 public class FanoutExchangeConsumer {
 
     /**
@@ -49,7 +50,7 @@ public class FanoutExchangeConsumer {
      */
     @RabbitListener(queues = "queue.fanout.test.2")
     public void processSmsNotification(String message) {
-        System.out.println("📱 Sending SMS: " + message);
+        System.out.println(" Sending SMS: " + message);
         // SMS gönderme mantığı buraya yazılabilir
     }
 }

@@ -12,7 +12,7 @@ public class DirectExchangeConfiguration {
 
     @Bean
     public DirectExchange directExchange() {
-        return new DirectExchange("exchange.direct.test");
+        return new DirectExchange("exchange.direct.test", true, false);
     }
 
     @Bean
@@ -23,7 +23,10 @@ public class DirectExchangeConfiguration {
     @Bean
     public Binding bindingDirect(Queue directQueue, DirectExchange directExchange) {
         // Routing Key "kirmizi" ise bu kuyruğa git
-        return BindingBuilder.bind(directQueue).to(directExchange).with("kirmizi");
+        return BindingBuilder
+                .bind(directQueue)
+                .to(directExchange)
+                .with("kirmizi");
     }
 }
 

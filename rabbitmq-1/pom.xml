@@ -11,8 +11,6 @@
     <artifactId>rabbitmq-1</artifactId>
     <name>rabbitmq-1</name>
     <description>RabbitMQ Tutorial Module 1</description>
-    
-    <!-- Tüm bağımlılıklar parent pom.xml'den otomatik olarak gelir -->
 
     <build>
         <plugins>
