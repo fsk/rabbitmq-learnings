@@ -50,3 +50,24 @@ GET http://localhost:8083/api/consume/topic
 GET http://localhost:8083/api/consume/headers
 
 ###
+
+### ============================================
+### RabbitMQ-2 API Requests
+### Server: localhost:8080
+### RabbitMQ: localhost:5672
+### ============================================
+
+### Send SMS Notification
+POST http://localhost:8080/api/notifications/sms?message=SMS Notification Message
+
+###
+
+### Send Email Notification
+POST http://localhost:8080/api/notifications/email?message=Email Notification Message
+
+###
+
+### Send Slack Notification
+POST http://localhost:8080/api/notifications/slack?message=Slack Notification Message
+
+###
